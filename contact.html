@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rithu Aynampudi — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">Rithu Aynampudi</a>
+    <nav class="links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="container page">
+  <h1 class="page-title">Contact</h1>
+  <section class="grid-2">
+    <div class="card" aria-labelledby="reach-title">
+      <h2 id="reach-title">Reach Out</h2>
+      <p><strong>Email:</strong> <a href="mailto:riaynam@iu.edu">riaynam@iu.edu</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rithuayn/" target="_blank" rel="noopener">linkedin.com/in/rithuayn</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/rithuayn" target="_blank" rel="noopener">github.com/rithuayn</a></p>
+    </div>
+
+    <form class="card form" id="contact-form" novalidate>
+      <h2>Quick Message</h2>
+
+      <label for="firstName"><span>First Name</span>
+        <input id="firstName" name="firstName" type="text" required aria-required="true"/>
+      </label>
+
+      <label for="lastName"><span>Last Name</span>
+        <input id="lastName" name="lastName" type="text" required aria-required="true"/>
+      </label>
+
+      <label for="email"><span>Email Address</span>
+        <input id="email" name="email" type="email" required aria-required="true" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"/>
+      </label>
+
+      <label for="password"><span>Password</span>
+        <input id="password" name="password" type="password" minlength="8" required aria-required="true"/>
+      </label>
+
+      <label for="confirmPassword"><span>Confirm Password</span>
+        <input id="confirmPassword" name="confirmPassword" type="password" minlength="8" required aria-required="true"/>
+      </label>
+
+      <div id="form-errors" class="form-errors" role="alert" aria-live="polite"></div>
+
+      <button class="btn primary" type="submit">Send</button>
+      <p class="muted small">This demo validates client-side and then redirects to a Thank You page.</p>
+    </form>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Rithu Aynampudi · <a href="mailto:riaynam@iu.edu">riaynam@iu.edu</a> · 
+      <a href="https://www.linkedin.com/in/rithuayn/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/rithuayn" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
