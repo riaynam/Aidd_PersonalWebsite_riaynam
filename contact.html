@@ -34,33 +34,29 @@
       <p><strong>GitHub:</strong> <a href="https://github.com/rithuayn" target="_blank" rel="noopener">github.com/rithuayn</a></p>
     </div>
 
-    <form class="card form" id="contact-form" novalidate>
-      <h2>Quick Message</h2>
+    <form class="card form" id="add-project-form" method="post" action="/add" novalidate>
+      <h2>Add Project</h2>
 
-      <label for="firstName"><span>First Name</span>
-        <input id="firstName" name="firstName" type="text" required aria-required="true"/>
+      <label for="title"><span>Title</span>
+        <input id="title" name="title" type="text" required aria-required="true"/>
       </label>
 
-      <label for="lastName"><span>Last Name</span>
-        <input id="lastName" name="lastName" type="text" required aria-required="true"/>
+      <label for="description"><span>Description</span>
+        <textarea id="description" name="description" rows="4" required aria-required="true"></textarea>
       </label>
 
-      <label for="email"><span>Email Address</span>
-        <input id="email" name="email" type="email" required aria-required="true" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"/>
+      <label for="image_file_name"><span>Image File Name</span>
+        <input id="image_file_name" name="image_file_name" type="text" placeholder="e.g., myproject.png" required aria-required="true"/>
       </label>
 
-      <label for="password"><span>Password</span>
-        <input id="password" name="password" type="password" minlength="8" required aria-required="true"/>
-      </label>
-
-      <label for="confirmPassword"><span>Confirm Password</span>
-        <input id="confirmPassword" name="confirmPassword" type="password" minlength="8" required aria-required="true"/>
-      </label>
+      <div class="muted small">
+        Place the image file in <code>static/images</code> and reference its file name above.
+      </div>
 
       <div id="form-errors" class="form-errors" role="alert" aria-live="polite"></div>
 
-      <button class="btn primary" type="submit">Send</button>
-      <p class="muted small">This demo validates client-side and then redirects to a Thank You page.</p>
+      <button class="btn primary" type="submit">Save Project</button>
+      <p class="muted small">After saving, you'll be redirected to the Projects page.</p>
     </form>
   </section>
 </main>

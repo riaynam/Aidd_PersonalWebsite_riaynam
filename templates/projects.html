@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="/">Rithu Aynampudi</a>
+    <nav class="links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/leadership.html">Leadership</a>
+      <a href="/resume.html">Resume</a>
+      <a href="/add">Add Project</a>
+    </nav>
+  </div>
+</header>
+<main class="container page">
+  <h1 class="page-title">Projects</h1>
+
+  {% if projects %}
+  <div class="card">
+    <div style="overflow-x:auto">
+      <table style="width:100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th style="text-align:left; padding:10px; border-bottom:1px solid #e5e7eb;">Title</th>
+            <th style="text-align:left; padding:10px; border-bottom:1px solid #e5e7eb;">Description</th>
+            <th style="text-align:left; padding:10px; border-bottom:1px solid #e5e7eb;">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for project in projects %}
+          <tr>
+            <td style="vertical-align:top; padding:10px; border-bottom:1px solid #f1f5f9; font-weight:600;">{{ project.title }}</td>
+            <td style="vertical-align:top; padding:10px; border-bottom:1px solid #f1f5f9;">{{ project.description }}</td>
+            <td style="vertical-align:top; padding:10px; border-bottom:1px solid #f1f5f9;">
+              <img src="{{ url_for('static', filename='images/' ~ project.image_file_name) }}"
+                   alt="{{ project.title }} image"
+                   style="max-height:120px; border-radius:12px; border:1px solid #e5e7eb; background:#f9fafb; padding:6px;"/>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% else %}
+  <div class="card">
+    <p class="muted">No projects yet. Use <a href="/add">Add Project</a> to create your first entry.</p>
+  </div>
+  {% endif %}
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Rithu Aynampudi · <a href="mailto:riaynam@iu.edu">riaynam@iu.edu</a> ·
+      <a href="https://www.linkedin.com/in/rithuayn/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/rithuayn" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

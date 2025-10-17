@@ -1,0 +1,31 @@
+Setup & Run
+===========
+
+Prerequisites: Python 3.10+ installed.
+
+1) Install dependencies:
+   pip install -r requirements.txt
+
+2) Run the app:
+   python app.py
+
+3) Open your browser to:
+   http://localhost:5000
+
+What changed
+------------
+- Added DAL.py: sqlite3 Data Access Layer for the projects table
+- Added app.py: Flask app with routes:
+  - GET / -> serves existing index
+  - GET /projects -> renders projects from the database via Jinja template
+  - GET/POST /add -> form to add a new project (title, description, image file name)
+- Created templates/projects.html to display projects in a table (Title, Description, Image)
+- Copied assets to static/ and updated templates to reference /static
+- Converted contact.html into an Add Project form posting to /add
+- Created requirements.txt (Flask)
+- Initialized projects.db automatically on app start; table is created if missing
+
+Notes
+-----
+- Place your image files in static/images. In the form, reference the file name only (e.g., mylogo.png). The app will display the image from /static/images/mylogo.png on the Projects page.
+- .venv folder has been removed; please recreate a virtual environment locally if desired.
