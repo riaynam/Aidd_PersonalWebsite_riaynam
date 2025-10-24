@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="page-title">Projects & Experience</h1>
+
+  <p><a class="btn" href="/add">Add Project</a></p>
+
+  {% if projects %}
+    <table class="projects-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in projects %}
+          <tr>
+            <td>
+              {% if p.imageFileName %}
+                <img src="{{ url_for('static', filename=p.imageFileName) }}" alt="{{ p.title }}" style="max-width:150px; height:auto;"/>
+              {% else %}
+                <span class="muted">No image</span>
+              {% endif %}
+            </td>
+            <td>{{ p.title }}</td>
+            <td>{{ p.description }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No projects yet. <a href="/add">Add one</a>.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="page-title">Add Project</h1>
+
+  <form method="post" class="card form">
+    {% if error %}
+      <div class="form-errors" style="color:red;">{{ error }}</div>
+    {% endif %}
+    <label for="title"><span>Title</span>
+      <input id="title" name="title" type="text" required />
+    </label>
+
+    <label for="description"><span>Description</span>
+      <textarea id="description" name="description" rows="4" required></textarea>
+    </label>
+
+    <label for="imageFileName"><span>Image file name (place file in static/images/)</span>
+      <input id="imageFileName" name="imageFileName" type="text" placeholder="example.jpg (will be stored under static/images/)" />
+    </label>
+
+    <button class="btn primary" type="submit">Add Project</button>
+  </form>
+{% endblock %}
